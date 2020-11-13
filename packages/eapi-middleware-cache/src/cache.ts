@@ -11,8 +11,9 @@ export interface WithCacheOptions {
  * Higher order function providing generic cache handling for request handlers
  * @param options hash containing the value to be assigned to the Cache-Control header and wheter or not to cache errors
  * @param options.cacheControl the value to be assigned to the Cache-Control header (control the Browser Cache TTL)
- * @param options.cacheCacheError wheter or not to cache errors. Defaults to false.
  * @param options.cdnTtl this control the Edge Cache TTL, by default it also sets a cacheControl of the same value
+ * @param options.cacheCacheError Optional: wheter or not to cache errors. Defaults to false.
+ * @param options.varyHeaders Optional: an array of Header names to be add to the Vary Header (eg: 'Accept', 'Origin' ... )
  * @returns a middleware that will apply caching to the passed request handler
  *
  * @description
@@ -29,7 +30,7 @@ export function withCache({
   cdnTtl,
   cacheError = false,
   varyHeaders = [],
-}: WithCacheOptions): Middleware {
+}: WithCacheOptions = {}): Middleware {
   return function _withCache(requestHandler) {
     return async function cacheHandler({ event, request, params }) {
       // Bypass the middleware if not applicable

@@ -2,8 +2,8 @@
   "name": "@p-j/eapi-middleware-cache",
   "version": "1.0.0",
   "description": "A cache middleware to work within an EAPI app. Check worker-eapi-template for context.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/cache.js",
+  "types": "dist/cache.d.ts",
   "keywords": [
     "eapi",
     "workers",
