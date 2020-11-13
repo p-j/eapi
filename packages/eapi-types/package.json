@@ -25,5 +25,8 @@
   },
   "devDependencies": {
     "typescript": "^4.0.5"
+  },
+  "scripts": {
+    "tsc": "tsc"
   }
 }
