@@ -1,0 +1,25 @@
+{
+  "name": "@p-j/eapi-types",
+  "version": "1.0.0",
+  "description": "Common TypeScript typings for EAPI projects",
+  "license": "MIT",
+  "author": "Jérémie Parker <github@jeremie-parker.com>",
+  "keywords": [
+    "eapi",
+    "workers",
+    "cloudflare",
+    "cloudflare-workers",
+    "middleware",
+    "type",
+    "typescript"
+  ],
+  "main": "index.js",
+  "types": "./index.d.ts",
+  "dependencies": {
+    "@cloudflare/workers-types": "^2.1.0",
+    "tiny-request-router": "^1.2.2"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.5"
+  }
+}
