@@ -15,7 +15,8 @@
     "sourceMap": true,
     "types": [
       "@cloudflare/workers-types",
-      "@p-j/eapi-types"
+      "@p-j/eapi-types",
+      "jest"
     ]
   },
   "include": [
