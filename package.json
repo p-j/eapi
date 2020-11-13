@@ -12,6 +12,7 @@
     "lerna": "^3.22.1",
     "node-fetch": "^2.6.1",
     "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
     "service-worker-mock": "^2.0.5",
     "ts-jest": "^26.4.4",
     "ts-node": "^9.0.0",

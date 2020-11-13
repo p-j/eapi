@@ -20,7 +20,6 @@
     "@p-j/eapi-types": "^1.0.0"
   },
   "scripts": {
-    "tsc": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rimraf ./dist && tsc"
   }
 }
