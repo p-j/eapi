@@ -1,3 +1,5 @@
+import { Middleware } from '@p-j/eapi-types'
+
 export interface WithCacheOptions {
   cacheControl?: string
   cdnTtl?: number
@@ -37,7 +39,7 @@ export function withCache({
 
       if (cdnTtl) {
         // Override CDN Caching rules for this request
-        // This is equivalent to setting two page rules: "Edge Cache TTL" to cdnTtl and "Cache Level" (to "Cache Everything")
+        // This is equivalent to setting two page rules: "Edge Cache TTL" to cdnTtl and "Cache Level" to "Cache Everything"
         // cdnTtl will also add a Cache-Control header of the same value by default
         const newRequest = new Request(request, {
           cf: { cacheTtl: cdnTtl },

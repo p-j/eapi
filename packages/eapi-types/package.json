@@ -4,6 +4,10 @@
   "description": "Common TypeScript typings for EAPI projects",
   "license": "MIT",
   "author": "Jérémie Parker <github@jeremie-parker.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/p-j/eapi"
+  },
   "keywords": [
     "eapi",
     "workers",

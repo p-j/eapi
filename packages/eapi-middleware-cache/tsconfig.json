@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "declaration": true,
+    "preserveSymlinks": true,
     "outDir": "./dist",
     "target": "esnext",
     "module": "commonjs",
@@ -13,6 +15,7 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "types": [
+      "@cloudflare/workers-types",
       "@p-j/eapi-types"
     ]
   },
