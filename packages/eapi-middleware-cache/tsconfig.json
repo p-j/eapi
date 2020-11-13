@@ -1,10 +1,6 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist",
-    "types": [
-      "@cloudflare/workers-types",
-      "@p-j/eapi-types"
-    ]
+    "outDir": "./dist"
   },
 }

@@ -22,9 +22,7 @@
     "./packages/**/src/*.ts",
     "./packages/**/__tests__/*.ts",
     "./packages/**/src/**/*.ts",
-    "./packages/**/__tests__/**/*.ts",
-    "./packages/**/node_modules/@cloudflare/workers-types/index.d.ts",
-    "./packages/**/node_modules/@p-j/eapi-types/index.d.ts"
+    "./packages/**/__tests__/**/*.ts"
   ],
   "exclude": [
     "node_modules",
