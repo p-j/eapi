@@ -2,10 +2,8 @@
   "name": "@p-j/eapi-middleware-errorhandler",
   "version": "1.0.0",
   "description": "An Error Handler middleware to work within an EAPI app. Check worker-eapi-template for context.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "keywords": [
     "eapi",
     "workers",
@@ -16,5 +14,14 @@
     "exception"
   ],
   "author": "Jérémie Parker <github@jeremie-parker.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@cloudflare/workers-types": "^2.0.0",
+    "@p-j/eapi-types": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc"
+  }
 }
