@@ -1,7 +1,7 @@
 import { withErrorHandler } from './withErrorHandler'
 
 describe('withErrorHandler', () => {
-  let successFn: jest.Mock, errorFn: jest.Mock, error: Error
+  let successFn: jest.Mock, errorFn: jest.Mock, forwardFn: jest.Mock, error: Error
 
   beforeEach(() => {
     error = new Error()
@@ -9,6 +9,7 @@ describe('withErrorHandler', () => {
     errorFn = jest.fn(() => {
       throw error
     })
+    forwardFn = jest.fn()
   })
 
   it('to not do anything if the passed function succed', async () => {
@@ -37,12 +38,25 @@ describe('withErrorHandler', () => {
   it('produce a detailed 500 response in case of failure & debug=true is in the URL', async () => {
     const request = new Request('https://example.com?debug=true')
     const event = new FetchEvent('fetch', { request })
-    const requestHandler = withErrorHandler({ allowDebug: true })(errorFn)
+    const requestHandler = withErrorHandler({ enableDebug: true })(errorFn)
 
     const response = await requestHandler({ event, request, params: {} })
 
     expect(errorFn.mock.calls.length).toBe(1)
     expect(response.status).toBe(500)
     expect(await response.text()).toBe(error.stack)
+  })
+
+  it('call the forward function when given', async () => {
+    const request = new Request('https://example.com')
+    const event = new FetchEvent('fetch', { request })
+    const requestHandler = withErrorHandler({ forwardError: forwardFn })(errorFn)
+
+    const response = await requestHandler({ event, request, params: {} })
+
+    expect(errorFn.mock.calls.length).toBe(1)
+    expect(forwardFn.mock.calls.length).toBe(1)
+    expect(response.status).toBe(500)
+    expect(response.body).toBe(null)
   })
 })
