@@ -1,7 +1,9 @@
 {
   "name": "root",
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
     "@cloudflare/workers-types": "^2.1.0",
     "@trust/webcrypto": "^0.9.2",
@@ -21,6 +23,7 @@
   "dependencies": {},
   "scripts": {
     "test": "lerna run test -- --passWithNoTests --ci --coverage",
-    "build": "lerna run build"
+    "build": "lerna run build",
+    "format": "prettier --write '**/*.{ts,js,css,json,md}'"
   }
 }

@@ -26,7 +26,9 @@
   },
   "jest": {
     "preset": "ts-jest",
-    "setupFiles": ["../../jest.setup.ts"]
+    "setupFiles": [
+      "../../jest.setup.ts"
+    ]
   },
   "scripts": {
     "build": "rimraf ./dist && tsc",
