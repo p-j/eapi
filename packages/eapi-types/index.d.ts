@@ -1,4 +1,9 @@
-import { Params } from 'tiny-request-router'
+/**
+ * Params are parsed options, usually extracted from the Request (path/query string...)
+ */
+export interface Params {
+  [key: string]: string
+}
 
 /**
  * The context of the current request, including the full FetchEvent, the current Request and the Params matched by the Router if any

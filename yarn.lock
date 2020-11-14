@@ -5673,11 +5673,6 @@ path-parse@^1.0.6:
   resolved "https://registry.eatwith.io/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
   integrity sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==
 
-path-to-regexp@^6.1.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-6.2.0.tgz#f7b3803336104c346889adece614669230645f38"
-  integrity sha512-f66KywYG6+43afgE/8j/GoiNyygk/bnoCbps++3ErRKsIYkGGupyv07R2Ok5m9i67Iqc+T2g1eAUGUPzWhYTyg==
-
 path-type@^1.0.0:
   version "1.1.0"
   resolved "https://registry.eatwith.io/path-type/-/path-type-1.1.0.tgz#59c44f7ee491da704da415da5a4070ba4f8fe441"
@@ -6869,13 +6864,6 @@ through@2, "through@>=2.2.7 <3", through@^2.3.4, through@^2.3.6:
   version "2.3.8"
   resolved "https://registry.eatwith.io/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
   integrity sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
-
-tiny-request-router@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/tiny-request-router/-/tiny-request-router-1.2.2.tgz#1b80694497e4e8dcbb8e93851ec7f03c6ca13e75"
-  integrity sha512-6ZMFU7AP9so+hkqmMM9fJ11V44EAcYuHCmNdsyM8k94oVnNDPQwUAAPoBHqchHSpKG6yZbCasgVeRxaY5v2BCg==
-  dependencies:
-    path-to-regexp "^6.1.0"
 
 tmp@^0.0.33:
   version "0.0.33"

@@ -21,7 +21,6 @@
   "main": "index.js",
   "types": "./index.d.ts",
   "dependencies": {
-    "@cloudflare/workers-types": "^2.1.0",
-    "tiny-request-router": "^1.2.2"
+    "@cloudflare/workers-types": "^2.1.0"
   }
 }
