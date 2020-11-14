@@ -1,0 +1,25 @@
+{
+  "name": "eapi-util-applymiddlewares",
+  "version": "1.0.0",
+  "description": "EAPI utility function that make the whole middleware stack work.",
+  "keywords": [
+    "eapi",
+    "workers",
+    "cloudflare",
+    "cloudflare-workers",
+    "middleware",
+    "utility"
+  ],
+  "author": "Jérémie Parker <github@jeremie-parker.com>",
+  "homepage": "https://github.com/p-j/eapi#readme",
+  "license": "MIT",
+  "main": "dist/applyMiddlewares.js",
+  "types": "dist/applyMiddlewares.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p-j/eapi.git"
+  },
+  "scripts": {
+    "build": "rimraf ./dist && tsc"
+  }
+}
