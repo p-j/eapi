@@ -2,6 +2,16 @@
 
 > A middleware to configure cache behavior on a per route or request basis
 
+## Installation
+
+- From the NPM registry
+
+```sh
+npm install @p-j/eapi-middleware-cache
+# or
+yarn add @p-j/eapi-middleware-cache
+```
+
 ## Usage
 
 `withCache` is a Middleware Factory, that, given a number of options, will return an actual Middleware function.
