@@ -5,6 +5,7 @@ export interface WithCacheOptions {
   cdnTtl?: number
   cacheError?: boolean
   varyHeaders?: string[]
+  serverTimings?: boolean
 }
 
 /**
@@ -14,6 +15,7 @@ export interface WithCacheOptions {
  * @param options.cdnTtl this control the Edge Cache TTL, by default it also sets a cacheControl of the same value
  * @param options.cacheCacheError Optional: wheter or not to cache errors. Defaults to false.
  * @param options.varyHeaders Optional: an array of Header names to be add to the Vary Header (eg: 'Accept', 'Origin' ... )
+ * @param options.serverTimings Optional: add Server-Timing header with cache interaction information. Defaults to true.
  * @returns a middleware that will apply caching to the passed request handler
  *
  * @description
@@ -30,6 +32,7 @@ export function withCache({
   cdnTtl,
   cacheError = false,
   varyHeaders = [],
+  serverTimings = true,
 }: WithCacheOptions = {}): Middleware {
   return function _withCache(requestHandler) {
     return async function cacheHandler({ event, request, params }) {
@@ -64,7 +67,9 @@ export function withCache({
       // https://developers.cloudflare.com/workers/templates/pages/modify_res_props
       const response = new Response(originalResponse.body, originalResponse)
       // Add some timings information, if taken from cache, the values stacks which is neat
-      response.headers.append('Server-Timing', `cfw-${cacheMiss ? 'miss' : 'hit'};dur=${execTime}`)
+      if (serverTimings) {
+        response.headers.append('Server-Timing', `cfw-${cacheMiss ? 'miss' : 'hit'};dur=${execTime}`)
+      }
 
       if (!cacheError && response.status >= 400) {
         // If response is an error, by default we prevent it from being cached
