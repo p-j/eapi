@@ -2,8 +2,9 @@
   "name": "@p-j/eapi-middleware-cache",
   "version": "1.0.0",
   "description": "A cache middleware to work within an EAPI app. Check worker-eapi-template for context.",
-  "main": "dist/withCache.js",
-  "types": "dist/withCache.d.ts",
+  "license": "MIT",
+  "author": "Jérémie Parker <github@jeremie-parker.com>",
+  "homepage": "https://github.com/p-j/eapi/tree/main/packages/eapi-middleware-cache",
   "keywords": [
     "eapi",
     "workers",
@@ -12,14 +13,23 @@
     "middleware",
     "cache"
   ],
-  "author": "Jérémie Parker <github@jeremie-parker.com>",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p-j/eapi.git"
+  },
+  "main": "dist/withCache.js",
+  "types": "dist/withCache.d.ts",
   "dependencies": {},
   "devDependencies": {
     "@cloudflare/workers-types": "^2.0.0",
     "@p-j/eapi-types": "^1.0.0"
   },
+  "jest": {
+    "preset": "ts-jest",
+    "setupFiles": ["../../jest.setup.ts"]
+  },
   "scripts": {
-    "build": "rimraf ./dist && tsc"
+    "build": "rimraf ./dist && tsc",
+    "test": "jest"
   }
 }

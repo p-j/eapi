@@ -2,8 +2,9 @@
   "name": "@p-j/eapi-middleware-errorhandler",
   "version": "1.0.0",
   "description": "An Error Handler middleware to work within an EAPI app. Check worker-eapi-template for context.",
-  "main": "dist/withErrorHandler.js",
-  "types": "dist/withErrorHandler.d.ts",
+  "license": "MIT",
+  "author": "Jérémie Parker <github@jeremie-parker.com>",
+  "homepage": "https://github.com/p-j/eapi/tree/main/packages/eapi-middleware-errorHandler",
   "keywords": [
     "eapi",
     "workers",
@@ -13,14 +14,23 @@
     "error",
     "exception"
   ],
-  "author": "Jérémie Parker <github@jeremie-parker.com>",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p-j/eapi.git"
+  },
+  "main": "dist/withErrorHandler.js",
+  "types": "dist/withErrorHandler.d.ts",
   "dependencies": {},
   "devDependencies": {
     "@cloudflare/workers-types": "^2.0.0",
     "@p-j/eapi-types": "^1.0.0"
   },
+  "jest": {
+    "preset": "ts-jest",
+    "setupFiles": ["../../jest.setup.ts"]
+  },
   "scripts": {
-    "build": "rimraf ./dist && tsc"
+    "build": "rimraf ./dist && tsc",
+    "test": "jest"
   }
 }

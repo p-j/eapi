@@ -20,6 +20,7 @@
   },
   "dependencies": {},
   "scripts": {
-    "test": "jest"
+    "test": "lerna run test -- --passWithNoTests",
+    "build": "lerna run build"
   }
 }
