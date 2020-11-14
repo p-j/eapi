@@ -12,7 +12,7 @@ export interface WithCacheOptions {
  * Higher order function providing generic cache handling for request handlers
  * @param options hash containing the value to be assigned to the Cache-Control header and wheter or not to cache errors
  * @param options.cacheControl the value to be assigned to the Cache-Control header (control the Browser Cache TTL)
- * @param options.cdnTtl this control the Edge Cache TTL, by default it also sets a cacheControl of the same value
+ * @param options.cdnTtl this control the Edge Cache TTL, by default it also sets a Cache-Control of the same value
  * @param options.cacheCacheError Optional: wheter or not to cache errors. Defaults to false.
  * @param options.varyHeaders Optional: an array of Header names to be add to the Vary Header (eg: 'Accept', 'Origin' ... )
  * @param options.serverTimings Optional: add Server-Timing header with cache interaction information. Defaults to true.

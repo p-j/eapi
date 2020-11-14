@@ -31,12 +31,12 @@ describe('withCache', () => {
 
     const response = await requestHandler({ event, request, params: {} })
 
-    expect(successFn.mock.calls.length).toBe(1)
-    expect(waitUntil.mock.calls.length).toBe(1)
-    expect(response.headers.get('Cache-Control')).toBe(cacheControl)
-    expect(response.headers.get('Vary')).toBe(varyHeaders.join(','))
-    expect(matchSpy).toHaveBeenCalled()
-    expect(putSpy).toHaveBeenCalled()
+    expect(successFn.mock.calls.length).toBe(1) // call the request handler
+    expect(waitUntil.mock.calls.length).toBe(1) // make sure we've waited to put stuff in cache
+    expect(response.headers.get('Cache-Control')).toBe(cacheControl) // the cache header is added
+    expect(response.headers.get('Vary')).toBe(varyHeaders.join(',')) // the vary header is added
+    expect(matchSpy).toHaveBeenCalled() // we looked in the cache to find some response
+    expect(putSpy).toHaveBeenCalled() // we added the response to the cache as it was missing
   })
 
   it('hits the cache when called twice', async () => {
@@ -58,13 +58,15 @@ describe('withCache', () => {
     const event = Object.assign(new FetchEvent('fetch', { request }), { waitUntil })
     const requestHandler = withCache()(successFn)
 
-    await requestHandler({ event, request, params: {} })
-    await requestHandler({ event, request, params: {} })
+    const response1 = await requestHandler({ event, request, params: {} })
+    const response2 = await requestHandler({ event, request, params: {} })
 
     expect(successFn.mock.calls.length).toBe(2) // handler function is called all the time
     expect(waitUntil.mock.calls.length).toBe(0) // waintUntil is never called
     expect(matchSpy).toHaveBeenCalledTimes(2) // match is called for every request
     expect(putSpy).toHaveBeenCalledTimes(0) // cache is never updated
+    expect(response1.headers.get('Cache-Control')).toBe(null) // No Cache-Control is set on the responses
+    expect(response2.headers.get('Cache-Control')).toBe(null) // No Cache-Control is set on the responses
   })
 
   it('does not cache errors by default', async () => {
