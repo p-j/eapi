@@ -4,6 +4,10 @@
 
 ## Usage
 
+`withCache` is a Middleware Factory, that, given a number of options, will return an actual Middleware function.
+The middleware function can then be applied to the request handler `middlware(requestHandler)` and returns an enhanced request handler.
+The [type definitions](https://github.com/p-j/eapi/blob/main/packages/eapi-types/index.d.ts) can help you better understand how things work together.
+
 ### With [`@p-j/worker-eapi-template`](https://github.com/p-j/worker-eapi-template)
 
 That's the recommended way of using this middleware as it was built with this integration in mind.
