@@ -20,7 +20,7 @@
   },
   "dependencies": {},
   "scripts": {
-    "test": "lerna run test -- --passWithNoTests",
+    "test": "lerna run test -- --passWithNoTests --ci --coverage",
     "build": "lerna run build"
   }
 }
