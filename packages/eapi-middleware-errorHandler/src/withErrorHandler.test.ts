@@ -1,4 +1,4 @@
-import { withErrorHandler } from './errorHandler'
+import { withErrorHandler } from './withErrorHandler'
 
 describe('withErrorHandler', () => {
   let successFn: jest.Mock, errorFn: jest.Mock, error: Error

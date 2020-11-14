@@ -1,6 +1,6 @@
-import { withCache } from './cache'
+import { withCache } from './withCache'
 
-describe('cache', () => {
+describe('withCache', () => {
   let successFn: jest.Mock<Response>,
     errorFn: jest.Mock<Response>,
     waitUntil: jest.Mock<boolean>,
