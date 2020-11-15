@@ -128,3 +128,25 @@ addEventListener('fetch', (event) => {
 ## Types
 
 - [`@p-j/eapi-types`](./packages/eapy-types)
+
+## Contributing
+
+### Creating your own Middleware
+
+As you create your own middlewares to extend your application a few things should be considered:
+
+#### Making use of factory functions
+
+By convention and to facilitate evolution without breaking changes, middleware are usually returned by a factory function, even if at the beginning they don't take in any options.
+
+You may want to consider doing the same for your own middlewares, especially if you plan on opensourcing them.
+
+#### Making use of the provided types
+
+While nothing prevents you from using all the eapi-\* packages in a Javascript project, using TypeScript will a whole lot to the table with very limited friction. You can check [`@p-j/worker-eapi-template`](https://github.com/p-j/worker-eapi-template) as an example or inspiration for your own configuration.
+
+[`@p-j/eapi-types`](./packages/eapy-types) contains types that are useful for building compatible functions. You may want to depend on it to ensure compatibility.
+
+#### Making them discoverable
+
+Feel free to use the eapi-\* naming if your middleware is compatible, and the eapi tag on github & npm to ensure discoverability.
