@@ -23,6 +23,8 @@ export interface WithErrorHandlerOptions {
  * Middleware Factory returning a configured middleware for handling exceptions thrown by the requestHandler
  * @param options
  * @param options.enableDebug Optional: set to true to enable debug output using the ?debug=true querystring. Defaults to false.
+ * @param options.forwardError Optional: a function to do something else with the error; eg: log it ton an external system.
+ *                             It takes in an ErrorContext (a RequestContext extended with an error).
  */
 export function withErrorHandler({ enableDebug = false, forwardError }: WithErrorHandlerOptions = {}): Middleware {
   return function _withErrorHandler(requestHandler) {

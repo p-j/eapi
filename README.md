@@ -8,7 +8,7 @@
 
 It's a collection of common building blocks you need to build a scalable and composable API at the Edge using [Cloudflare Workers](https://workers.cloudflare.com/) and TypeScript.
 
-While EAPI packages are meant to work together with [`p-j/worker-eapi-template`](https://github.com/p-j/worker-eapi-template), you can also use them as standalone functions as demonstrated in their respective README.
+While EAPI packages are meant to work together with [`p-j/worker-eapi-template`](https://github.com/p-j/worker-eapi-template), you can also use them as standalone functions as [demonstrated below](https://github.com/p-j/eapi#standalone).
 
 | Package                                                                   | Description                                 | Build | Coverage |
 | ------------------------------------------------------------------------- | ------------------------------------------- | ----- | -------- |
