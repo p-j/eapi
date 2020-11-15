@@ -119,12 +119,12 @@ addEventListener('fetch', (event) => {
 
 ## API
 
-- [`eapi-middleware-cache`](./packages/eapi-middleware-cache/README.md)
-- [`eapi-middleware-cors`](./packages/eapi-middleware-cors/README.md)
-- [`eapi-middleware-errorHandler`](./packages/eapi-middleware-errorHandler/README.md)
-- [`eapi-middleware-redirect`](./packages/eapi-middleware-redirect/README.md)
-- [`eapi-util-applyMiddlewares`](./packages/eapi-util-applyMiddlewares/README.md)
+- [`eapi-middleware-cache`](./packages/eapi-middleware-cache)
+- [`eapi-middleware-cors`](./packages/eapi-middleware-cors)
+- [`eapi-middleware-errorHandler`](./packages/eapi-middleware-errorHandler)
+- [`eapi-middleware-redirect`](./packages/eapi-middleware-redirect)
+- [`eapi-util-applyMiddlewares`](./packages/eapi-util-applyMiddlewares)
 
 ## Types
 
-- [`@p-j/eapi-types`](../eapy-types)
+- [`@p-j/eapi-types`](./packages/eapy-types)
