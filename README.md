@@ -10,14 +10,14 @@ It's a collection of common building blocks you need to build a scalable and com
 
 While EAPI packages are meant to work together with [`p-j/worker-eapi-template`](https://github.com/p-j/worker-eapi-template), you can also use them as standalone functions as [demonstrated below](https://github.com/p-j/eapi#standalone).
 
-| Package                                                                   | Description                                 | Build | Coverage |
-| ------------------------------------------------------------------------- | ------------------------------------------- | ----- | -------- |
-| [`eapi-middleware-cache`](./packages/eapi-middleware-cache)               | A cache middleware                          |       |          |
-| [`eapi-middleware-cors`](./packages/eapi-middleware-cors)                 | A CORS middleware                           |       |          |
-| [`eapi-middleware-errorHandler`](./packages/eapi-middleware-errorHandler) | An Error Handler middleware                 |       |          |
-| [`eapi-middleware-redirect`](./packages/eapi-middleware-redirect)         | A Redirect middleware                       |       |          |
-| [`eapi-util-applyMiddlewares`](./packages/eapi-util-applyMiddlewares)     | A utility to combine multiple middlewares   |       |          |
-| [`eapi-types`](./packages/eapi-types)                                     | Common TypeScript typings for EAPI projects |       |          |
+| Package                                                                        | Description                                 | Build | Coverage |
+| ------------------------------------------------------------------------------ | ------------------------------------------- | ----- | -------- |
+| [`@p-j/eapi-middleware-cache`](./packages/eapi-middleware-cache)               | A cache middleware                          |       |          |
+| [`@p-j/eapi-middleware-cors`](./packages/eapi-middleware-cors)                 | A CORS middleware                           |       |          |
+| [`@p-j/eapi-middleware-errorHandler`](./packages/eapi-middleware-errorHandler) | An Error Handler middleware                 |       |          |
+| [`@p-j/eapi-middleware-redirect`](./packages/eapi-middleware-redirect)         | A Redirect middleware                       |       |          |
+| [`@p-j/eapi-util-applyMiddlewares`](./packages/eapi-util-applyMiddlewares)     | A utility to combine multiple middlewares   |       |          |
+| [`@p-j/eapi-types`](./packages/eapi-types)                                     | Common TypeScript typings for EAPI projects |       |          |
 
 ## Usage
 
@@ -119,11 +119,11 @@ addEventListener('fetch', (event) => {
 
 ## API
 
-- [`eapi-middleware-cache`](./packages/eapi-middleware-cache)
-- [`eapi-middleware-cors`](./packages/eapi-middleware-cors)
-- [`eapi-middleware-errorHandler`](./packages/eapi-middleware-errorHandler)
-- [`eapi-middleware-redirect`](./packages/eapi-middleware-redirect)
-- [`eapi-util-applyMiddlewares`](./packages/eapi-util-applyMiddlewares)
+- [`@p-j/eapi-middleware-cache`](./packages/eapi-middleware-cache)
+- [`@p-j/eapi-middleware-cors`](./packages/eapi-middleware-cors)
+- [`@p-j/eapi-middleware-errorHandler`](./packages/eapi-middleware-errorHandler)
+- [`@p-j/eapi-middleware-redirect`](./packages/eapi-middleware-redirect)
+- [`@p-j/eapi-util-applyMiddlewares`](./packages/eapi-util-applyMiddlewares)
 
 ## Types
 
