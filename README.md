@@ -1,6 +1,6 @@
 # EAPI
 
-> EAPI for Edge API, or Extremelly Awesome Programation Interface, you decide
+> EAPI for Edge API, or Extremelly Awesome Programation Interface, you decide 😎
 
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
