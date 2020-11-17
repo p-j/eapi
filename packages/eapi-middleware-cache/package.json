@@ -1,6 +1,6 @@
 {
   "name": "@p-j/eapi-middleware-cache",
-  "version": "0.0.0",
+  "version": "1.0.0-alpha.0",
   "description": "A cache middleware to work within an EAPI app. Check worker-eapi-template for context.",
   "license": "MIT",
   "author": "Jérémie Parker <github@jeremie-parker.com>",
@@ -19,7 +19,6 @@
   },
   "main": "dist/withCache.js",
   "types": "dist/withCache.d.ts",
-  "dependencies": {},
   "devDependencies": {
     "@cloudflare/workers-types": "^2.0.0",
     "@p-j/eapi-types": "^1.0.0"
