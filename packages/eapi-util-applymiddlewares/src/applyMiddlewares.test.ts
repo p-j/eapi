@@ -1,4 +1,3 @@
-import { RequestHandler, RequestContext } from '@p-j/eapi-types'
 import { applyMiddlewares } from './applyMiddlewares'
 
 function firstApplied(requestHandler: RequestHandler): RequestHandler {

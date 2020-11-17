@@ -1,5 +1,3 @@
-import { Middleware, RequestContext } from '@p-j/eapi-types'
-
 /**
  * The context of the current Error, extending the RequestContext
  */
@@ -27,8 +25,8 @@ export interface WithErrorHandlerOptions {
  *                             It takes in an ErrorContext (a RequestContext extended with an error).
  */
 export function withErrorHandler({ enableDebug = false, forwardError }: WithErrorHandlerOptions = {}): Middleware {
-  return function _withErrorHandler(requestHandler) {
-    return async function errorHandler({ event, request, params }) {
+  return function _withErrorHandler(requestHandler: RequestHandler) {
+    return async function errorHandler({ event, request, params }: RequestContext) {
       try {
         // await is not superfluous here as otherwise the catch is bypassed
         return await requestHandler({ event, request, params })

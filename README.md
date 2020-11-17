@@ -14,9 +14,9 @@ While EAPI packages are meant to work together with [`p-j/worker-eapi-template`]
 | ------------------------------------------------------------------------------ | ------------------------------------------- | ----- | -------- |
 | [`@p-j/eapi-middleware-cache`](./packages/eapi-middleware-cache)               | A cache middleware                          |       |          |
 | [`@p-j/eapi-middleware-cors`](./packages/eapi-middleware-cors)                 | A CORS middleware                           |       |          |
-| [`@p-j/eapi-middleware-errorHandler`](./packages/eapi-middleware-errorHandler) | An Error Handler middleware                 |       |          |
+| [`@p-j/eapi-middleware-errorhandler`](./packages/eapi-middleware-errorHandler) | An Error Handler middleware                 |       |          |
 | [`@p-j/eapi-middleware-redirect`](./packages/eapi-middleware-redirect)         | A Redirect middleware                       |       |          |
-| [`@p-j/eapi-util-applyMiddlewares`](./packages/eapi-util-applyMiddlewares)     | A utility to combine multiple middlewares   |       |          |
+| [`@p-j/eapi-util-applymiddlewares`](./packages/eapi-util-applyMiddlewares)     | A utility to combine multiple middlewares   |       |          |
 | [`@p-j/eapi-types`](./packages/eapi-types)                                     | Common TypeScript typings for EAPI projects |       |          |
 
 ## Usage
@@ -38,8 +38,8 @@ This example is already setup in [`@p-j/worker-eapi-template`](https://github.co
 import { Router } from 'tiny-request-router'
 import { TTL_30MINUTES } from './helpers/konstants'
 import { withCache } from '@p-j/eapi-middleware-cache'
-import { withErrorHandler } from '@p-j/eapi-middleware-errorHandler'
-import { applyMiddlewares } from '@p-j/eapi-util-applyMiddlewares'
+import { withErrorHandler } from '@p-j/eapi-middleware-errorhandler'
+import { applyMiddlewares } from '@p-j/eapi-util-applymiddlewares'
 
 function requestHandler({ event, request, params }: RequestContext): Response {
   return new Response('Hello World!')
@@ -70,7 +70,7 @@ Combining some of the EAPI tools while not embracing the whole template, you can
 
 ```ts
 import { withCache } from '@p-j/eapi-middleware-cache'
-import { applyMiddlewares } from '@p-j/eapi-util-applyMiddlewares'
+import { applyMiddlewares } from '@p-j/eapi-util-applymiddlewares'
 import { withAwesomeMiddleware } from './withAwesomeMiddleware'
 
 function requestHandler({ event, request, params }: RequestContext): Response {
@@ -121,9 +121,9 @@ addEventListener('fetch', (event) => {
 
 - [`@p-j/eapi-middleware-cache`](./packages/eapi-middleware-cache)
 - [`@p-j/eapi-middleware-cors`](./packages/eapi-middleware-cors)
-- [`@p-j/eapi-middleware-errorHandler`](./packages/eapi-middleware-errorHandler)
+- [`@p-j/eapi-middleware-errorhandler`](./packages/eapi-middleware-errorHandler)
 - [`@p-j/eapi-middleware-redirect`](./packages/eapi-middleware-redirect)
-- [`@p-j/eapi-util-applyMiddlewares`](./packages/eapi-util-applyMiddlewares)
+- [`@p-j/eapi-util-applymiddlewares`](./packages/eapi-util-applyMiddlewares)
 
 ## Types
 

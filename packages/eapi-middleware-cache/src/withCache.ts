@@ -1,5 +1,3 @@
-import { Middleware } from '@p-j/eapi-types'
-
 export interface WithCacheOptions {
   cacheControl?: string
   cdnTtl?: number
@@ -34,8 +32,8 @@ export function withCache({
   varyHeaders = [],
   serverTimings = true,
 }: WithCacheOptions = {}): Middleware {
-  return function _withCache(requestHandler) {
-    return async function cacheHandler({ event, request, params }) {
+  return function _withCache(requestHandler: RequestHandler) {
+    return async function cacheHandler({ event, request, params }: RequestContext) {
       // Bypass the middleware if not applicable
       if (!isCacheable(request)) return requestHandler({ event, request, params })
 

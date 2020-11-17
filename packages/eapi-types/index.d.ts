@@ -1,7 +1,7 @@
 /**
  * Params are parsed options, usually extracted from the Request (path/query string...)
  */
-export interface Params {
+interface Params {
   [key: string]: string
 }
 
@@ -51,4 +51,14 @@ interface Transform {
  */
 interface FetchEventHandler {
   (event: FetchEvent): Response | Promise<Response>
+}
+
+/**
+ * Responsible from providing a RequestHandler and the Params for a given FetchEvent
+ */
+interface RouteMatcher {
+  (event: FetchEvent): {
+    handler: RequestHandler
+    params: Params
+  } | null
 }

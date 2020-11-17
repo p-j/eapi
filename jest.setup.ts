@@ -54,7 +54,7 @@ export class KV_MOCK {
   }
 
   // TODO: implement list function
-  async list(options?: {
+  async list(_options?: {
     prefix?: string
     limit?: number
     cursor?: string
@@ -72,15 +72,7 @@ export class KV_MOCK {
 }
 
 declare var global: any
-Object.assign(
-  global,
-  { fetch, TextEncoder, crypto },
-  makeServiceWorkerEnv(),
-  { IS_MAINTENANCE: 'false' },
-  {
-    /* Add any KVNamespace you need here */
-  },
-)
+Object.assign(global, { fetch, TextEncoder, crypto }, makeServiceWorkerEnv())
 
 // open the default cache that is readily available on Cloudflare Workers
 // NOTE: there is one caveat with this setup:

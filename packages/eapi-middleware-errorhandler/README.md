@@ -1,4 +1,4 @@
-# `eapi-middleware-errorHandler`
+# `@p-j/eapi-middleware-errorhandler`
 
 > A middleware to handle exceptions within your handler & middleware stack.
 > It can be configured to log the error to an external service or to render the Error to the response.
@@ -8,9 +8,9 @@
 - From the NPM registry
 
 ```sh
-npm install @p-j/eapi-middleware-errorHandler
+npm install @p-j/eapi-middleware-errorhandler
 # or
-yarn add @p-j/eapi-middleware-errorHandler
+yarn add @p-j/eapi-middleware-errorhandler
 ```
 
 ## API

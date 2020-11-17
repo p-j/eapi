@@ -1,13 +1,13 @@
-# `eapi-util-applyMiddlewares`
+# `@p-j/eapi-util-applymiddlewares`
 
 > Apply a list of middlwares to a given request handler, returning an enhanced request handler
 
 ## Usage
 
 ```ts
-import { applyMiddlewares } from '@p-j/eapi-util-applyMiddlewares'
+import { applyMiddlewares } from '@p-j/eapi-util-applymiddlewares'
 import { withCache } from '@p-j/eapi-middleware-cache'
-import { withErrorHandler } from '@p-j/eapi-middleware-errorHandler
+import { withErrorHandler } from '@p-j/eapi-middleware-errorhandler'
 
 const requestHandler: RequestHandler = (context) => new Response('Hello World')
 

@@ -1,5 +1,3 @@
-import { RequestHandler, Middleware } from '@p-j/eapi-types'
-
 /**
  * Apply a stack of Middlware atop the request handler
  * @param requestHandler the request handler for the current RequestContext
