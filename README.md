@@ -2,7 +2,10 @@
 
 > EAPI for Edge API, or Extremelly Awesome Programation Interface, you decide 😎
 
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff?style=flat-square)](https://lerna.js.org/)
+[![codecov](https://img.shields.io/codecov/c/github/p-j/eapi?style=flat-square)](https://codecov.io/gh/p-j/eapi)
+[![Build Status](https://img.shields.io/github/workflow/status/p-j/eapi/Build?style=flat-square)](https://github.com/p-j/eapi/actions?query=workflow%3ABuild)
+[![License](https://img.shields.io/github/license/p-j/eapi?style=flat-square)](./LICENSE)
 
 ## What are EAPI packages?
 
@@ -10,14 +13,14 @@ It's a collection of common building blocks you need to build a scalable and com
 
 While EAPI packages are meant to work together with [`p-j/worker-eapi-template`](https://github.com/p-j/worker-eapi-template), you can also use them as standalone functions as [demonstrated below](https://github.com/p-j/eapi#standalone).
 
-| Package                                                                        | Description                                 | Build | Coverage |
-| ------------------------------------------------------------------------------ | ------------------------------------------- | ----- | -------- |
-| [`@p-j/eapi-middleware-cache`](./packages/eapi-middleware-cache)               | A cache middleware                          |       |          |
-| [`@p-j/eapi-middleware-cors`](./packages/eapi-middleware-cors)                 | A CORS middleware                           |       |          |
-| [`@p-j/eapi-middleware-errorhandler`](./packages/eapi-middleware-errorHandler) | An Error Handler middleware                 |       |          |
-| [`@p-j/eapi-middleware-redirect`](./packages/eapi-middleware-redirect)         | A Redirect middleware                       |       |          |
-| [`@p-j/eapi-util-applymiddlewares`](./packages/eapi-util-applyMiddlewares)     | A utility to combine multiple middlewares   |       |          |
-| [`@p-j/eapi-types`](./packages/eapi-types)                                     | Common TypeScript typings for EAPI projects |       |          |
+| Package                                                                        | Description                                  | Version                                                                                                                                                     |
+| ------------------------------------------------------------------------------ | -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`@p-j/eapi-middleware-cache`](./packages/eapi-middleware-cache)               | Configure browser & CDN cache                | [![version](https://img.shields.io/npm/v/@p-j/eapi-middleware-cache?style=flat-square)](https://npmjs.com/package/@p-j/eapi-middleware-cache)               |
+| [`@p-j/eapi-middleware-cors`](./packages/eapi-middleware-cors)                 | Validate Origin & Apply CORS Headers         | [![version](https://img.shields.io/npm/v/@p-j/eapi-middleware-cors?style=flat-square)](https://npmjs.com/package/@p-j/eapi-middleware-cors)                 |
+| [`@p-j/eapi-middleware-errorhandler`](./packages/eapi-middleware-errorHandler) | Catch exceptions, forward them or print them | [![version](https://img.shields.io/npm/v/@p-j/eapi-middleware-errorhandler?style=flat-square)](https://npmjs.com/package/@p-j/eapi-middleware-errorhandler) |
+| [`@p-j/eapi-middleware-redirect`](./packages/eapi-middleware-redirect)         | Redirect, Rewrite or Proxy Requests          | [![version](https://img.shields.io/npm/v/@p-j/eapi-middleware-redirect?style=flat-square)](https://npmjs.com/package/@p-j/eapi-middleware-redirect)         |
+| [`@p-j/eapi-util-applymiddlewares`](./packages/eapi-util-applyMiddlewares)     | A utility to combine multiple middlewares    | [![version](https://img.shields.io/npm/v/@p-j/eapi-util-applymiddlewares?style=flat-square)](https://npmjs.com/package/@p-j/eapi-util-applymiddlewares)     |
+| [`@p-j/eapi-types`](./packages/eapi-types)                                     | Common TypeScript typings for EAPI projects  | [![version](https://img.shields.io/npm/v/@p-j/eapi-types?style=flat-square)](https://npmjs.com/package/@p-j/eapi-types)                                     |
 
 ## Usage
 
