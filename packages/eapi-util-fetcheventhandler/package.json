@@ -1,0 +1,39 @@
+{
+  "name": "@p-j/eapi-util-fetcheventhandler",
+  "version": "1.0.0",
+  "description": "EAPI utility function that make the whole middleware stack work.",
+  "license": "MIT",
+  "author": "Jérémie Parker <github@jeremie-parker.com>",
+  "homepage": "https://github.com/p-j/eapi/tree/main/packages/eapi-util-fetchEventHandler",
+  "keywords": [
+    "eapi",
+    "workers",
+    "cloudflare",
+    "cloudflare-workers",
+    "middleware",
+    "utility"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p-j/eapi.git"
+  },
+  "main": "dist/applyMiddlewares.js",
+  "types": "dist/applyMiddlewares.d.ts",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^2.0.0",
+    "@p-j/eapi-types": "^1.0.0"
+  },
+  "dependencies": {
+    "@p-j/eapi-util-applymiddlewares": "^1.0.0"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "setupFiles": [
+      "../../jest.setup.ts"
+    ]
+  },
+  "scripts": {
+    "build": "rimraf ./dist && tsc",
+    "test": "jest"
+  }
+}
