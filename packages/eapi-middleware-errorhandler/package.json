@@ -1,6 +1,6 @@
 {
   "name": "@p-j/eapi-middleware-errorhandler",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "An Error Handler middleware to work within an EAPI app. Check worker-eapi-template for context.",
   "license": "MIT",
   "author": "Jérémie Parker <github@jeremie-parker.com>",
