@@ -1,0 +1,36 @@
+# Commented while I figure out how to do a proper lerna publish with semantic release, generating changelog etc...
+#
+# name: Publish
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: actions/setup-node@v1
+#         with:
+#           node-version: 15
+#       - run: yarn --pure-lockfile
+#       - run: yarn test
+#         env:
+#           CI: true
+#       - uses: codecov/codecov-action@v1
+#         with:
+#           token: ${{secrets.CODECOV_TOKEN}}
+
+#   publish-npm:
+#     needs: build
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#       - name: Semantic Release
+#         uses: cycjimmy/semantic-release-action@v2
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
