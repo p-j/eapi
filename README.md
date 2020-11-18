@@ -13,15 +13,15 @@ It's a collection of common building blocks you need to build a scalable and com
 
 While EAPI packages are meant to work together with [`p-j/worker-eapi-template`](https://github.com/p-j/worker-eapi-template), you can also use them as standalone functions as [demonstrated below](https://github.com/p-j/eapi#standalone).
 
-| Package                                                                        | Description                                  | Version                                                                                                                                                     |
-| ------------------------------------------------------------------------------ | -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`@p-j/eapi-middleware-cache`](./packages/eapi-middleware-cache)               | Configure browser & CDN cache                | [![version](https://img.shields.io/npm/v/@p-j/eapi-middleware-cache?style=flat-square)](https://npmjs.com/package/@p-j/eapi-middleware-cache)               |
-| [`@p-j/eapi-middleware-cors`](./packages/eapi-middleware-cors)                 | Validate Origin & Apply CORS Headers         | [![version](https://img.shields.io/npm/v/@p-j/eapi-middleware-cors?style=flat-square)](https://npmjs.com/package/@p-j/eapi-middleware-cors)                 |
-| [`@p-j/eapi-middleware-errorhandler`](./packages/eapi-middleware-errorhandler) | Catch exceptions, forward them or print them | [![version](https://img.shields.io/npm/v/@p-j/eapi-middleware-errorhandler?style=flat-square)](https://npmjs.com/package/@p-j/eapi-middleware-errorhandler) |
-| [`@p-j/eapi-middleware-redirect`](./packages/eapi-middleware-redirect)         | Redirect, Rewrite or Proxy Requests          | [![version](https://img.shields.io/npm/v/@p-j/eapi-middleware-redirect?style=flat-square)](https://npmjs.com/package/@p-j/eapi-middleware-redirect)         |
-| [`@p-j/eapi-util-applymiddlewares`](./packages/eapi-util-applymiddlewares)     | A utility to combine multiple middlewares    | [![version](https://img.shields.io/npm/v/@p-j/eapi-util-applymiddlewares?style=flat-square)](https://npmjs.com/package/@p-j/eapi-util-applymiddlewares)     |
-| [`@p-j/eapi-util-fetcheventhandler`](./packages/eapi-util-fetcheventhandler)   | Apply global middlewares & Match Routes      | [![version](https://img.shields.io/npm/v/@p-j/eapi-util-fetcheventhandler?style=flat-square)](https://npmjs.com/package/@p-j/eapi-util-fetcheventhandler)   |
-| [`@p-j/eapi-types`](./packages/eapi-types)                                     | Common TypeScript typings for EAPI projects  | [![version](https://img.shields.io/npm/v/@p-j/eapi-types?style=flat-square)](https://npmjs.com/package/@p-j/eapi-types)                                     |
+| Package                                                                        | Description                                  | Version                                                                                                                                                     | Changelog                                                                                                                                                  |
+| ------------------------------------------------------------------------------ | -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`@p-j/eapi-middleware-cache`](./packages/eapi-middleware-cache)               | Configure browser & CDN cache                | [![version](https://img.shields.io/npm/v/@p-j/eapi-middleware-cache?style=flat-square)](https://npmjs.com/package/@p-j/eapi-middleware-cache)               | [![changelog](https://img.shields.io/badge/changelogs.xyz-browse-brightgreen?style=flat-square)](https://changelogs.xyz/@p-j/eapi-middleware-cache)        |
+| [`@p-j/eapi-middleware-cors`](./packages/eapi-middleware-cors)                 | Validate Origin & Apply CORS Headers         | [![version](https://img.shields.io/npm/v/@p-j/eapi-middleware-cors?style=flat-square)](https://npmjs.com/package/@p-j/eapi-middleware-cors)                 | [![changelog](https://img.shields.io/badge/changelogs.xyz-browse-brightgreen?style=flat-square)](https://changelogs.xyz/@p-j/eapi-middleware-cors)         |
+| [`@p-j/eapi-middleware-errorhandler`](./packages/eapi-middleware-errorhandler) | Catch exceptions, forward them or print them | [![version](https://img.shields.io/npm/v/@p-j/eapi-middleware-errorhandler?style=flat-square)](https://npmjs.com/package/@p-j/eapi-middleware-errorhandler) | [![changelog](https://img.shields.io/badge/changelogs.xyz-browse-brightgreen?style=flat-square)](https://changelogs.xyz/@p-j/eapi-middleware-errorhandler) |
+| [`@p-j/eapi-middleware-redirect`](./packages/eapi-middleware-redirect)         | Redirect, Rewrite or Proxy Requests          | [![version](https://img.shields.io/npm/v/@p-j/eapi-middleware-redirect?style=flat-square)](https://npmjs.com/package/@p-j/eapi-middleware-redirect)         | [![changelog](https://img.shields.io/badge/changelogs.xyz-browse-brightgreen?style=flat-square)](https://changelogs.xyz/@p-j/eapi-middleware-redirect)     |
+| [`@p-j/eapi-util-applymiddlewares`](./packages/eapi-util-applymiddlewares)     | A utility to combine multiple middlewares    | [![version](https://img.shields.io/npm/v/@p-j/eapi-util-applymiddlewares?style=flat-square)](https://npmjs.com/package/@p-j/eapi-util-applymiddlewares)     | [![changelog](https://img.shields.io/badge/changelogs.xyz-browse-brightgreen?style=flat-square)](https://changelogs.xyz/@p-j/eapi-util-applymiddlewares)   |
+| [`@p-j/eapi-util-fetcheventhandler`](./packages/eapi-util-fetcheventhandler)   | Apply global middlewares & Match Routes      | [![version](https://img.shields.io/npm/v/@p-j/eapi-util-fetcheventhandler?style=flat-square)](https://npmjs.com/package/@p-j/eapi-util-fetcheventhandler)   | [![changelog](https://img.shields.io/badge/changelogs.xyz-browse-brightgreen?style=flat-square)](https://changelogs.xyz/@p-j/eapi-util-fetcheventhandler)  |
+| [`@p-j/eapi-types`](./packages/eapi-types)                                     | Common TypeScript typings for EAPI projects  | [![version](https://img.shields.io/npm/v/@p-j/eapi-types?style=flat-square)](https://npmjs.com/package/@p-j/eapi-types)                                     | [![changelog](https://img.shields.io/badge/changelogs.xyz-browse-brightgreen?style=flat-square)](https://changelogs.xyz/@p-j/eapi-types)                   |
 
 ## Usage
 
@@ -40,10 +40,11 @@ This example is already setup in [`@p-j/worker-eapi-template`](https://github.co
 // src/router.ts
 
 import { Router } from 'tiny-request-router'
-import { TTL_30MINUTES } from './helpers/konstants'
 import { withCache } from '@p-j/eapi-middleware-cache'
 import { withErrorHandler } from '@p-j/eapi-middleware-errorhandler'
 import { applyMiddlewares } from '@p-j/eapi-util-applymiddlewares'
+
+const TTL_30MINUTES = 60 * 30
 
 function requestHandler({ event, request, params }: RequestContext): Response {
   return new Response('Hello World!')
@@ -114,6 +115,7 @@ const cacheForOneHour = withCache({ cacheControl: 'public; max-age=3600' })
 const finalRequestHandler = cacheForOneHour(requestHandler)
 
 addEventListener('fetch', (event) => {
+  // The only constraints is that the RequestHandler needs to take in a RequestContext
   const requestContext = { event, request: event.request, params: {} }
   // use the enhanced request handler to build the response
   event.respondWith(finaleRequestHandler(requestContext))
@@ -154,3 +156,7 @@ While nothing prevents you from using all the eapi-\* packages in a Javascript p
 #### Making them discoverable
 
 Feel free to use the eapi-\* naming if your middleware is compatible, and the eapi tag on github & npm to ensure discoverability.
+
+### Contributing to this repository
+
+Pull Request are welcome to add more middlewares, utility or request handler to this collection.
