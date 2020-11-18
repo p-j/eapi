@@ -17,8 +17,8 @@
     "type": "git",
     "url": "git+https://github.com/p-j/eapi.git"
   },
-  "main": "dist/applyMiddlewares.js",
-  "types": "dist/applyMiddlewares.d.ts",
+  "main": "dist/fetchEventHandler.js",
+  "types": "dist/fetchEventHandler.d.ts",
   "devDependencies": {
     "@cloudflare/workers-types": "^2.0.0",
     "@p-j/eapi-types": "^1.0.0-alpha.0"
