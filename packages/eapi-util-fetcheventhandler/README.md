@@ -6,6 +6,16 @@
 >
 > It also facilitate the application of "global" middlwares to all your routes.
 
+## Installation
+
+- From the NPM registry
+
+```sh
+npm install @p-j/eapi-util-fetcheventhandler
+# or
+yarn add @p-j/eapi-util-fetcheventhandler
+```
+
 ## Usage
 
 ```ts

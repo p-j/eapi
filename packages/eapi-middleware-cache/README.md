@@ -1,4 +1,4 @@
-# `eapi-middleware-cache`
+# `@p-j/eapi-middleware-cache`
 
 > A middleware to configure cache behavior on a per route or request basis
 

@@ -2,6 +2,16 @@
 
 > Apply a list of middlwares to a given request handler, returning an enhanced request handler
 
+## Installation
+
+- From the NPM registry
+
+```sh
+npm install @p-j/eapi-util-applymiddlewares
+# or
+yarn add @p-j/eapi-util-applymiddlewares
+```
+
 ## Usage
 
 ```ts
