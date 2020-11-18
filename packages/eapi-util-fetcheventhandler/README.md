@@ -1,4 +1,4 @@
-# `@p-j/eapi-util-fetchEventHandler`
+# `@p-j/eapi-util-fetcheventhandler`
 
 > This package provide a Fetch Event Handler factory that can be used in a multi-router setup.
 >
