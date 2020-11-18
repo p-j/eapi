@@ -19,8 +19,7 @@
   },
   "main": "dist/applyMiddlewares.js",
   "types": "dist/applyMiddlewares.d.ts",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@cloudflare/workers-types": "^2.1.0",
     "@p-j/eapi-types": "^1.0.0"

@@ -81,7 +81,7 @@ export function withCache({
         cacheMiss && response.headers.get('Cache-Control') && response.headers.get('Cache-Control') !== 'no-store'
 
       if (shouldPutInCache) {
-        varyHeaders.forEach((header) => {
+        varyHeaders.forEach(header => {
           const vary = response.headers.get('Vary')
           if (!vary || !vary.includes(header)) {
             response.headers.append('Vary', header)
