@@ -20,6 +20,7 @@ While EAPI packages are meant to work together with [`p-j/worker-eapi-template`]
 | [`@p-j/eapi-middleware-errorhandler`](./packages/eapi-middleware-errorHandler) | Catch exceptions, forward them or print them | [![version](https://img.shields.io/npm/v/@p-j/eapi-middleware-errorhandler?style=flat-square)](https://npmjs.com/package/@p-j/eapi-middleware-errorhandler) |
 | [`@p-j/eapi-middleware-redirect`](./packages/eapi-middleware-redirect)         | Redirect, Rewrite or Proxy Requests          | [![version](https://img.shields.io/npm/v/@p-j/eapi-middleware-redirect?style=flat-square)](https://npmjs.com/package/@p-j/eapi-middleware-redirect)         |
 | [`@p-j/eapi-util-applymiddlewares`](./packages/eapi-util-applyMiddlewares)     | A utility to combine multiple middlewares    | [![version](https://img.shields.io/npm/v/@p-j/eapi-util-applymiddlewares?style=flat-square)](https://npmjs.com/package/@p-j/eapi-util-applymiddlewares)     |
+| [`@p-j/eapi-util-fetcheventhandler`](./packages/eapi-util-fetchEventHandler)   | Apply global middlewares & Match Routes      | [![version](https://img.shields.io/npm/v/@p-j/eapi-util-fetchEventHandler?style=flat-square)](https://npmjs.com/package/@p-j/eapi-util-fetchEventHandler)   |
 | [`@p-j/eapi-types`](./packages/eapi-types)                                     | Common TypeScript typings for EAPI projects  | [![version](https://img.shields.io/npm/v/@p-j/eapi-types?style=flat-square)](https://npmjs.com/package/@p-j/eapi-types)                                     |
 
 ## Usage
@@ -102,7 +103,6 @@ While this middleware is intended to be used with [`@p-j/worker-eapi-template`](
 
 ```ts
 import { withCache } from '@p-j/eapi-middleware-cache'
-import { RequestContext } from '@p-j/eapi-types'
 
 function requestHandler({ event, request, params }: RequestContext): Response {
   return new Response('Hello World!')
@@ -127,6 +127,7 @@ addEventListener('fetch', (event) => {
 - [`@p-j/eapi-middleware-errorhandler`](./packages/eapi-middleware-errorHandler)
 - [`@p-j/eapi-middleware-redirect`](./packages/eapi-middleware-redirect)
 - [`@p-j/eapi-util-applymiddlewares`](./packages/eapi-util-applyMiddlewares)
+- [`@p-j/eapi-util-fetcheventhandler`](./packages/eapi-util-fetchEventHandler)
 
 ## Types
 

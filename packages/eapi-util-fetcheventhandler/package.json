@@ -1,27 +1,30 @@
 {
-  "name": "@p-j/eapi-middleware-redirect",
-  "version": "0.0.1-alpha.0",
-  "description": "A redirect middleware to work within an EAPI app. Check worker-eapi-template for context.",
+  "name": "@p-j/eapi-util-fetcheventhandler",
+  "version": "0.0.0",
+  "description": "EAPI utility function that make the whole middleware stack work.",
   "license": "MIT",
   "author": "Jérémie Parker <github@jeremie-parker.com>",
-  "homepage": "https://github.com/p-j/eapi/tree/main/packages/eapi-middleware-redirect",
+  "homepage": "https://github.com/p-j/eapi/tree/main/packages/eapi-util-fetcheventhandler",
   "keywords": [
     "eapi",
     "workers",
     "cloudflare",
     "cloudflare-workers",
     "middleware",
-    "cache"
+    "utility"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/p-j/eapi.git"
   },
-  "main": "dist/withRedirect.js",
-  "types": "dist/withRedirect.d.ts",
+  "main": "dist/applyMiddlewares.js",
+  "types": "dist/applyMiddlewares.d.ts",
   "devDependencies": {
     "@cloudflare/workers-types": "^2.0.0",
     "@p-j/eapi-types": "^1.0.0-alpha.0"
+  },
+  "dependencies": {
+    "@p-j/eapi-util-applymiddlewares": "^1.0.0-alpha.0"
   },
   "jest": {
     "preset": "ts-jest",
