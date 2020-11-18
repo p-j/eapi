@@ -1,6 +1,6 @@
 {
   "name": "@p-j/eapi-middleware-errorhandler",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0",
   "description": "An Error Handler middleware to work within an EAPI app. Check worker-eapi-template for context.",
   "license": "MIT",
   "author": "Jérémie Parker <github@jeremie-parker.com>",
@@ -22,7 +22,7 @@
   "types": "dist/withErrorHandler.d.ts",
   "devDependencies": {
     "@cloudflare/workers-types": "^2.0.0",
-    "@p-j/eapi-types": "^1.0.0-alpha.0"
+    "@p-j/eapi-types": "^1.0.0"
   },
   "jest": {
     "preset": "ts-jest",
