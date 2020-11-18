@@ -7,6 +7,9 @@ on:
 
 jobs:
   release:
+    # disable release action on forks
+    if: github.repository == 'p-j/eapi'
+
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,6 +22,8 @@ jobs:
       - uses: changesets/action@master
         with:
           publish: yarn release
+          commit: 'chore(release): publish'
+          title: Publish next versions
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
