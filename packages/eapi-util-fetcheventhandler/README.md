@@ -56,5 +56,5 @@ export const fetchEventHandler = eventHandlerFactory({
   middlewares: [withErrorHandler()],
 })
 
-addEventListener('fetch', (event) => event.respondWith(fetchEventHandler(event)))
+addEventListener('fetch', event => event.respondWith(fetchEventHandler(event)))
 ```

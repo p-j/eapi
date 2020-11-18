@@ -82,7 +82,7 @@ function requestHandler({ event, request, params }: RequestContext): Response {
   return new Response('Hello World!')
 }
 
-addEventListener('fetch', (event) => {
+addEventListener('fetch', event => {
   const requestContext = { event, request: event.request, params: {} }
   // apply all the middlewares on top of the original handler
   const handler = applyMiddlewares(
@@ -114,7 +114,7 @@ const cacheForOneHour = withCache({ cacheControl: 'public; max-age=3600' })
 // apply the middleware to the request handler
 const finalRequestHandler = cacheForOneHour(requestHandler)
 
-addEventListener('fetch', (event) => {
+addEventListener('fetch', event => {
   // The only constraints is that the RequestHandler needs to take in a RequestContext
   const requestContext = { event, request: event.request, params: {} }
   // use the enhanced request handler to build the response

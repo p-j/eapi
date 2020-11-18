@@ -23,7 +23,6 @@ describe('fetchEventHandler', () => {
   ]
 
   describe('originless: true', () => {
-
     it('handle a fetch event with a configured matcher', async () => {
       const eventHandler = fetchEventHandler({
         matcher: successfullMatcher,
