@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@1.4.0/schema.json",
-  "changelog": "@changesets/cli/changelog-github",
+  "changelog": ["@changesets/changelog-github", { "repo": "p-j/eapi" }],
   "commit": false,
   "linked": [],
   "access": "public",
