@@ -19,6 +19,12 @@
   },
   "main": "dist/applyMiddlewares.js",
   "types": "dist/applyMiddlewares.d.ts",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^2.1.0",
+    "@p-j/eapi-types": "^1.0.0"
+  },
   "jest": {
     "preset": "ts-jest",
     "setupFiles": [
