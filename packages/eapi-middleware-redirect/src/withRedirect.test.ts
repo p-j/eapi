@@ -18,13 +18,13 @@ Response.redirect = jest.fn((url, status) => {
 
 const request = new Request('https://toto.com/titi')
 
-const transform: Transform = ({ request }) => {
+const transform: Transform = ({ request }: { request: Request }) => {
   const url = new URL(request.url)
   url.hostname = url.hostname.replace('toto', 'tata')
   return new Request(url.toString(), request)
 }
 
-const passThrough: RequestHandler = async ({ request }) => {
+const passThrough: RequestHandler = async ({ request }: RequestContext) => {
   const response = await fetch(request)
   // Mock the redirect='follow' behavior
   const url = response.headers.get('location')
@@ -43,6 +43,16 @@ describe('Redirect', () => {
   })
   afterAll(() => {
     fetchMock.disableMocks()
+  })
+
+  it('should act as a passThrough if no options are given', async () => {
+    fetchMock.mockResponse('ok', { status: 200, url: 'https://toto.com/tutu' })
+
+    const requestHandler = withRedirect()(passThrough)
+    const responseWithRedirect = await requestHandler({ request: request.clone() } as RequestContext)
+    const responseWithPassthrough = await passThrough({ request: request.clone() } as RequestContext)
+
+    expect(responseWithRedirect).toEqual(responseWithPassthrough)
   })
 
   it('should perform a transparent redirect by url', async () => {
@@ -105,7 +115,9 @@ describe('Redirect', () => {
 
   it('should not redirect when transparent is false and url is unchanged', async () => {
     fetchMock.mockResponseOnce('ok', { status: 200, url: request.url })
-    const requestHandler = withRedirect({ transparent: false, transform: ({ request }) => request })(passThrough)
+    const requestHandler = withRedirect({ transparent: false, transform: ({ request }: RequestContext) => request })(
+      passThrough,
+    )
     const response = await requestHandler({ request: request.clone() } as RequestContext)
 
     expect(response).toBeInstanceOf(Response)
@@ -126,14 +138,14 @@ describe('Redirect', () => {
 
     const requestHandlerWithRedirectManual = withRedirect({
       transparent: true,
-      transform: ({ request }) => request,
       redirect: 'manual',
+      transform: ({ request }: RequestContext) => request,
     })(passThrough)
 
     const requestHandlerWithRedirectFollow = withRedirect({
       transparent: true,
-      transform: ({ request }) => request,
       redirect: 'follow',
+      transform: ({ request }: RequestContext) => request,
     })(passThrough)
 
     const response = await requestHandlerWithRedirectManual({ request: request.clone() } as RequestContext)

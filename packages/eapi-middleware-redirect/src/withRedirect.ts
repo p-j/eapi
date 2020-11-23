@@ -1,7 +1,7 @@
 export interface WithRedirectOptions {
   urlOrPath?: string
-  transparent?: boolean
   transform?: Transform
+  transparent?: boolean
   permanent?: boolean
   redirect?: 'follow' | 'error' | 'manual' | undefined
 }
@@ -22,10 +22,10 @@ export function withRedirect({
   permanent = false,
   redirect = 'follow',
 }: WithRedirectOptions = {}): Middleware {
-  return function _withRedirect(requestHandler) {
-    return async function redirectHandler({ event, request, params }) {
+  return function _withRedirect(requestHandler: RequestHandler) {
+    return async function redirectHandler({ event, request, params }: RequestContext) {
       const originalURL = new URL(request.url)
-      originalURL.searchParams.sort()
+      originalURL.searchParams.sort() // Sorted for comparison (see below)
 
       // new URL(input[, base])
       // input <string> The absolute or relative input URL to parse.
@@ -37,9 +37,14 @@ export function withRedirect({
         typeof transform === 'function'
           ? transform({ request: intermediateRequest, params, event })
           : intermediateRequest
+
+      // Apply the redirect configuration:
+      // - with 'follow' the worker act as a proxy (the request handler will follow redirects to get the final response)
+      // - with 'manual' the worker act as a redirect (the request handler won't follow redirects and will return them to the client)
       const finalRequest = new Request(transformedRequest, { redirect })
+
       const finalURL = new URL(finalRequest.url)
-      finalURL.searchParams.sort()
+      finalURL.searchParams.sort() // Sorted for comparison (see below)
 
       // if not transparent and the URL has been changed, the requestHandler will be ignored
       // as we need to redirect to the new URL
