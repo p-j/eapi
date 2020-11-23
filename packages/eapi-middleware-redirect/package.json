@@ -21,7 +21,7 @@
   "types": "dist/withRedirect.d.ts",
   "devDependencies": {
     "@cloudflare/workers-types": "^2.0.0",
-    "@p-j/eapi-types": "^1.0.0-alpha.0"
+    "@p-j/eapi-types": "^1.0.0"
   },
   "jest": {
     "preset": "ts-jest",
