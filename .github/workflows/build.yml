@@ -13,6 +13,7 @@ jobs:
         with:
           node-version: 15
       - run: yarn --pure-lockfile
+      - run: yarn lint
       - run: yarn build
       - run: yarn test
         env:
