@@ -27,11 +27,10 @@
   "scripts": {
     "build": "lerna run build",
     "changeset": "changeset",
-    "lint": "prettier --check '**/*.{ts,js,css,json,md}'",
+    "lint": "prettier --check '**/*.{ts,js,css,json}'",
     "format": "prettier --write '**/*.{ts,js,css,json,md}'",
     "lerna": "lerna",
     "release": "yarn build && changeset publish",
-    "version": "changeset version && yarn format && git add . && git commit --amend --no-edit",
     "test": "lerna run test -- --passWithNoTests --ci --coverage"
   }
 }
