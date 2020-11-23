@@ -19,7 +19,7 @@ import { applyMiddlewares } from '@p-j/eapi-util-applymiddlewares'
 import { withCache } from '@p-j/eapi-middleware-cache'
 import { withErrorHandler } from '@p-j/eapi-middleware-errorhandler'
 
-const requestHandler: RequestHandler = context => new Response('Hello World')
+const requestHandler: RequestHandler = (context) => new Response('Hello World')
 
 const finaleHandler = applyMiddlewares(
   requestHandler, // first argument is the original request handler
