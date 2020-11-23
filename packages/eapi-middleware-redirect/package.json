@@ -4,6 +4,9 @@
   "description": "A redirect middleware to work within an EAPI app. Check worker-eapi-template for context.",
   "license": "MIT",
   "author": "Jérémie Parker <github@jeremie-parker.com>",
+  "contributors": [
+    "Alban Vitale <me@alban.io>"
+  ],
   "homepage": "https://github.com/p-j/eapi/tree/main/packages/eapi-middleware-redirect",
   "keywords": [
     "eapi",
@@ -11,7 +14,9 @@
     "cloudflare",
     "cloudflare-workers",
     "middleware",
-    "cache"
+    "redirect",
+    "proxy",
+    "rewrite"
   ],
   "repository": {
     "type": "git",
