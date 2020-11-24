@@ -1,0 +1,36 @@
+{
+  "name": "@p-j/eapi-middleware-headers",
+  "version": "1.0.0",
+  "description": "A middleware to manage headers or requests within an EAPI app. Check worker-eapi-template for context.",
+  "license": "MIT",
+  "author": "Jérémie Parker <github@jeremie-parker.com>",
+  "homepage": "https://github.com/p-j/eapi/tree/main/packages/eapi-middleware-headers",
+  "keywords": [
+    "eapi",
+    "workers",
+    "cloudflare",
+    "cloudflare-workers",
+    "middleware",
+    "headers"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p-j/eapi.git"
+  },
+  "main": "dist/withHeaders.js",
+  "types": "dist/withHeaders.d.ts",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^2.0.0",
+    "@p-j/eapi-types": "^1.0.0"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "setupFiles": [
+      "../../jest.setup.ts"
+    ]
+  },
+  "scripts": {
+    "build": "rimraf ./dist && tsc",
+    "test": "jest"
+  }
+}
