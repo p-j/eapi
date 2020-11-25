@@ -1,5 +1,11 @@
 # @p-j/eapi-middleware-headers
 
+## 1.1.1
+
+### Patch Changes
+
+- [`41511c1`](https://github.com/p-j/eapi/commit/41511c1deb905f3ab59ce80e1838a0ab83bf8a04) Thanks [@p-j](https://github.com/p-j)! - replace headers.forEach by for...of headers.entries()
+
 ## 1.1.0
 
 ### Minor Changes
