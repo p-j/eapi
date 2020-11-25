@@ -1,6 +1,6 @@
 {
   "name": "@p-j/eapi-middleware-cors",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A CORS middleware to work within an EAPI app. Check worker-eapi-template for context.",
   "license": "MIT",
   "author": "Alban Vitale <me@alban.io>",
