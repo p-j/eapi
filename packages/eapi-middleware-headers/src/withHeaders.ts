@@ -79,22 +79,24 @@ export function manageHeaders({
       const values = parseHeaderValues(value)
       const originalValues = parseHeaderValues(subject.headers.get(header) || '')
 
-      switch (existing) {
-        case 'combine':
-          // Ensure unique values while combining
-          subject.headers.set(header, serializeHeaderValues(originalValues, values))
+      if (values.length) {
+        switch (existing) {
+          case 'combine':
+            // Ensure unique values while combining
+            subject.headers.set(header, serializeHeaderValues(originalValues, values))
 
-          break
-        case 'override':
-          // Ensure unique values while overriding
-          subject.headers.set(header, serializeHeaderValues(values))
-          break
-        case 'skip':
-          if (!originalValues.length) {
+            break
+          case 'override':
+            // Ensure unique values while overriding
             subject.headers.set(header, serializeHeaderValues(values))
-          }
-        default:
-          break
+            break
+          case 'skip':
+            if (!originalValues.length) {
+              subject.headers.set(header, serializeHeaderValues(values))
+            }
+          default:
+            break
+        }
       }
     })
   }
@@ -104,13 +106,13 @@ export function manageHeaders({
   return subject
 }
 
-function parseHeaderValues(valueString: string): string[] {
+export function parseHeaderValues(valueString: string): string[] {
   return valueString
     .split(',')
     .map((value) => value.trim())
     .filter((v) => !!v)
 }
 
-function serializeHeaderValues(...values: string[][]): string {
+export function serializeHeaderValues(...values: string[][]): string {
   return [...new Set(values.flat())].filter((v) => !!v).join(',')
 }

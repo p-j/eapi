@@ -35,5 +35,8 @@
   "scripts": {
     "build": "rimraf ./dist && tsc",
     "test": "jest"
+  },
+  "dependencies": {
+    "@p-j/eapi-middleware-headers": "^1.0.0"
   }
 }
