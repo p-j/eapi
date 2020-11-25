@@ -43,10 +43,10 @@ This middlware allow you to define redirections as well a to transparently proxy
 Let's say you want to proxy calls to an external API without disclosing sensitive informations like an API Key to your end users, or you want to guarantee anonimity for your users with regards to that 3rd party library for compliance reason or else.
 
 ```ts
-import { withRedirec } from '@p-j/eapi-middleware-redirect'
+import { withRedirect } from '@p-j/eapi-middleware-redirect'
 
 const passThrough: RequestHandler = ({ request }) => fetch(request)
-const proxySomeApi = withRedirec({
+const proxySomeApi = withRedirect({
   transparent: true, // forward the transformed request to the requestHandler
   redirect: 'follow', // ensure we follow any redirect that would appear while executing the transformed request
   transform: ({ request }) => {
