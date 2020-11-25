@@ -1,5 +1,11 @@
 # @p-j/eapi-middleware-cors
 
+## 1.1.1
+
+### Patch Changes
+
+- [`fcfbd31`](https://github.com/p-j/eapi/commit/fcfbd310f2debb960cccbfb785ab4885a2a82c31) Thanks [@p-j](https://github.com/p-j)! - upgrade dependencies
+
 ## 1.1.0
 
 ### Minor Changes
