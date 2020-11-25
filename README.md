@@ -2,7 +2,8 @@
 
 > EAPI for Edge API, or Extremelly Awesome Programation Interface, you decide 😎
 
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff?style=flat-square)](https://lerna.js.org/)
+[![lerna](https://img.shields.io/badge/build%20with-lerna-cc00ff?style=flat-square)](https://lerna.js.org/)
+[![lerna](https://img.shields.io/badge/released%20with-changeset-blue?style=flat-square)](https://github.com/atlassian/changesets/)
 [![codecov](https://img.shields.io/codecov/c/github/p-j/eapi?style=flat-square)](https://codecov.io/gh/p-j/eapi)
 [![Build Status](https://img.shields.io/github/workflow/status/p-j/eapi/Build?style=flat-square)](https://github.com/p-j/eapi/actions?query=workflow%3ABuild)
 [![License](https://img.shields.io/github/license/p-j/eapi?style=flat-square)](./LICENSE)
