@@ -1,8 +1,9 @@
 import { cors, withCors } from './withCors'
+import { serializeHeaderValues } from '@p-j/eapi-middleware-headers'
 
 const defaultAccessControlAllowOrigin = '*'
-const defaultAccessControlAllowHeaders = ['Origin', 'Content-Type', 'Accept', 'Authorization'].join(', ')
-const defaultAccessControlAllowMethods = ['GET', 'OPTIONS', 'HEAD'].join(', ')
+const defaultAccessControlAllowHeaders = serializeHeaderValues(['Origin', 'Content-Type', 'Accept', 'Authorization'])
+const defaultAccessControlAllowMethods = serializeHeaderValues(['GET', 'OPTIONS', 'HEAD'])
 const defaultAccessControlMaxAge = '3600'
 
 const accessControlAllowHeaders = ['Accept', 'Authorization', 'Cache-Control', 'Content-Type', 'Origin', 'User-Agent']
@@ -34,8 +35,8 @@ describe('Cors', () => {
         response: new Response(undefined, { status: 200 }),
         accessControlExposeHeaders: ['*', 'Authorization'],
       })
-      expect(response.headers.get('Access-Control-Expose-Headers')).toBe('Content-Length, Authorization')
-      expect(response2.headers.get('Access-Control-Expose-Headers')).toBe('*, Authorization')
+      expect(response.headers.get('Access-Control-Expose-Headers')).toBe('Content-Length,Authorization')
+      expect(response2.headers.get('Access-Control-Expose-Headers')).toBe('*,Authorization')
     })
 
     it('should set cors headers on a given response', () => {
@@ -47,8 +48,12 @@ describe('Cors', () => {
         accessControlMaxAge,
       })
       expect(response.headers.get('Access-Control-Allow-Origin')).toBe('https://tata.com')
-      expect(response.headers.get('Access-Control-Allow-Headers')).toBe(accessControlAllowHeaders.join(', '))
-      expect(response.headers.get('Access-Control-Allow-Methods')).toBe(accessControlAllowMethods.join(', '))
+      expect(response.headers.get('Access-Control-Allow-Headers')).toBe(
+        serializeHeaderValues(accessControlAllowHeaders),
+      )
+      expect(response.headers.get('Access-Control-Allow-Methods')).toBe(
+        serializeHeaderValues(accessControlAllowMethods),
+      )
       expect(response.headers.get('Access-Control-Max-Age')).toBe(String(accessControlMaxAge))
       expect(response.headers.get('Vary')).toBe('Origin')
     })
@@ -105,8 +110,12 @@ describe('Cors', () => {
       const response = await requestHandler({ event, request, params: {} })
 
       expect(response.headers.get('Access-Control-Allow-Origin')).toBe('https://tata.com')
-      expect(response.headers.get('Access-Control-Allow-Headers')).toBe(accessControlAllowHeaders.join(', '))
-      expect(response.headers.get('Access-Control-Allow-Methods')).toBe(accessControlAllowMethods.join(', '))
+      expect(response.headers.get('Access-Control-Allow-Headers')).toBe(
+        serializeHeaderValues(accessControlAllowHeaders),
+      )
+      expect(response.headers.get('Access-Control-Allow-Methods')).toBe(
+        serializeHeaderValues(accessControlAllowMethods),
+      )
       expect(response.headers.get('Access-Control-Max-Age')).toBe(String(accessControlMaxAge))
       expect(response.headers.get('Vary')).toBe('Origin')
     })

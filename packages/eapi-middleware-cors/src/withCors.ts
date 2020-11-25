@@ -1,3 +1,5 @@
+import { manageHeaders, serializeHeaderValues } from '@p-j/eapi-middleware-headers'
+
 export interface WithCorsOptions {
   isOriginAllowed?: Function
   accessControlAllowHeaders?: string[]
@@ -39,19 +41,18 @@ export function cors({
     return response
   }
 
-  const responseWithCors = new Response(response.body, response)
-  responseWithCors.headers.set('Access-Control-Allow-Origin', accessControlAllowOrigin)
-  responseWithCors.headers.set('Access-Control-Allow-Headers', accessControlAllowHeaders.join(', '))
-  responseWithCors.headers.set('Access-Control-Allow-Methods', accessControlAllowMethods.join(', '))
-  responseWithCors.headers.set('Access-Control-Max-Age', String(accessControlMaxAge))
-
-  if (accessControlAllowCredentials) {
-    responseWithCors.headers.set('Access-Control-Allow-Credentials', 'true')
-  }
-
-  if (accessControlExposeHeaders.length) {
-    responseWithCors.headers.set('Access-Control-Expose-Headers', accessControlExposeHeaders.join(', '))
-  }
+  const responseWithCors = manageHeaders({
+    subject: new Response(response.body, response),
+    addHeaders: {
+      'Access-Control-Allow-Origin': accessControlAllowOrigin,
+      'Access-Control-Allow-Headers': serializeHeaderValues(accessControlAllowHeaders),
+      'Access-Control-Allow-Methods': serializeHeaderValues(accessControlAllowMethods),
+      'Access-Control-Max-Age': String(accessControlMaxAge),
+      'Access-Control-Allow-Credentials': accessControlAllowCredentials ? 'true' : '',
+      'Access-Control-Expose-Headers': serializeHeaderValues(accessControlExposeHeaders),
+    },
+    existing: 'override',
+  }) as Response
 
   const vary = responseWithCors.headers.get('Vary')
   if (accessControlAllowOrigin !== '*' && (!vary || !vary.includes('Origin'))) {
