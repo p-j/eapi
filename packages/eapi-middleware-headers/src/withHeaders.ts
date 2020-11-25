@@ -75,7 +75,7 @@ export function manageHeaders({
 
   if (addHeaders) {
     const headers = new Headers(addHeaders)
-    headers.forEach((value, header) => {
+    for (let [header, value] of headers.entries()) {
       const values = parseHeaderValues(value)
       const originalValues = parseHeaderValues(subject.headers.get(header) || '')
 
@@ -98,7 +98,7 @@ export function manageHeaders({
             break
         }
       }
-    })
+    }
   }
 
   removeHeaders.forEach((header) => subject.headers.delete(header))
