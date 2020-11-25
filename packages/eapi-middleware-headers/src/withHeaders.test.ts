@@ -1,13 +1,13 @@
-import { withHeaders } from './withHeaders'
+import { manageHeaders, withHeaders } from './withHeaders'
 
 describe('withHeaders', () => {
   let event: FetchEvent, request: Request, params: Params, handler: RequestHandler
 
-  function collectHeaders(headers: Headers): { [key: string]: string } {
+  function collectHeaders(subject: Request | Response): { [key: string]: string } {
     let obj = {}
-    headers.forEach((value, key) => {
+    for (let [key, value] of subject.headers.entries()) {
       Object.assign(obj, { [key]: value })
-    })
+    }
     return obj
   }
 
@@ -20,8 +20,8 @@ describe('withHeaders', () => {
     })
     event = new FetchEvent('fetch', { request })
     params = {}
-    handler = ({ request }) =>
-      new Response(JSON.stringify(collectHeaders(request.headers)), {
+    handler = ({ request }: { request: Request }) =>
+      new Response(JSON.stringify(collectHeaders(request)), {
         status: 200,
         headers: {
           'X-Res-Foo': 'bar',
@@ -99,6 +99,68 @@ describe('withHeaders', () => {
       const response = await requestHandler({ event, request, params })
       expect(response.headers.get('X-Res-Bar')).toBe(null)
       expect(response.headers.get('X-Res-Foo')).toBe('bar')
+    })
+  })
+})
+
+describe('manageHeaders', () => {
+  ;['Request', 'Response'].forEach((name) => {
+    describe(name, () => {
+      let subject: Request | Response
+
+      beforeEach(() => {
+        let headers = new Headers({
+          'X-Bar': 'bar',
+          'X-Foo': 'foo',
+        })
+
+        subject =
+          name === 'Request'
+            ? new Request('https://example.com', { headers })
+            : new Response('ok', { status: 200, headers })
+      })
+
+      it('can combine headers', async () => {
+        const newSubject = manageHeaders({
+          subject,
+          addHeaders: { 'X-Bar': 'foo', 'X-Fizz': 'buzz' },
+          existing: 'combine',
+        })
+        expect(newSubject.headers.get('X-Bar')).toBe('bar,foo')
+        expect(newSubject.headers.get('X-Foo')).toBe('foo')
+        expect(newSubject.headers.get('X-Fizz')).toBe('buzz')
+      })
+
+      it('can override headers', async () => {
+        const newSubject = manageHeaders({
+          subject,
+          addHeaders: { 'X-Bar': 'foo', 'X-Fizz': 'buzz' },
+          existing: 'override',
+        })
+        expect(newSubject.headers.get('X-Bar')).toBe('foo')
+        expect(newSubject.headers.get('X-Foo')).toBe('foo')
+        expect(newSubject.headers.get('X-Fizz')).toBe('buzz')
+      })
+
+      it('can skip existing headers', async () => {
+        const newSubject = manageHeaders({
+          subject,
+          addHeaders: { 'X-Bar': 'foo', 'X-Fizz': 'buzz' },
+          existing: 'skip',
+        })
+        expect(newSubject.headers.get('X-Bar')).toBe('bar')
+        expect(newSubject.headers.get('X-Foo')).toBe('foo')
+        expect(newSubject.headers.get('X-Fizz')).toBe('buzz')
+      })
+
+      it('can remove headers', async () => {
+        const newSubject = manageHeaders({
+          subject,
+          removeHeaders: ['X-Bar'],
+        })
+        expect(newSubject.headers.get('X-Bar')).toBe(null)
+        expect(newSubject.headers.get('X-Foo')).toBe('foo')
+      })
     })
   })
 })

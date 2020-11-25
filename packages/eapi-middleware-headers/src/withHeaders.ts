@@ -90,6 +90,9 @@ export function manageHeaders({
           subject.headers.set(header, serializeHeaderValues(values))
           break
         case 'skip':
+          if (!originalValues.length) {
+            subject.headers.set(header, serializeHeaderValues(values))
+          }
         default:
           break
       }
@@ -102,7 +105,10 @@ export function manageHeaders({
 }
 
 function parseHeaderValues(valueString: string): string[] {
-  return valueString.split(',').map((value) => value.trim())
+  return valueString
+    .split(',')
+    .map((value) => value.trim())
+    .filter((v) => !!v)
 }
 
 function serializeHeaderValues(...values: string[][]): string {
