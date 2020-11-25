@@ -33,5 +33,6 @@
     "release": "yarn build && changeset publish",
     "version": "changeset version",
     "test": "lerna run test -- --passWithNoTests --ci --coverage"
-  }
+  },
+  "version": "0.0.0"
 }
