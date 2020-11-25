@@ -76,18 +76,18 @@ export function manageHeaders({
   if (addHeaders) {
     const headers = new Headers(addHeaders)
     headers.forEach((value, header) => {
-      const values = value.split(',')
-      const originalValues = (subject.headers.get(header) || '').split(',')
+      const values = parseHeaderValues(value)
+      const originalValues = parseHeaderValues(subject.headers.get(header) || '')
 
       switch (existing) {
         case 'combine':
           // Ensure unique values while combining
-          subject.headers.set(header, [...new Set([originalValues, values].flat())].filter((v) => !!v).join(','))
+          subject.headers.set(header, serializeHeaderValues(originalValues, values))
 
           break
         case 'override':
           // Ensure unique values while overriding
-          subject.headers.set(header, [...new Set(values)].filter((v) => !!v).join(','))
+          subject.headers.set(header, serializeHeaderValues(values))
           break
         case 'skip':
         default:
@@ -99,4 +99,12 @@ export function manageHeaders({
   removeHeaders.forEach((header) => subject.headers.delete(header))
 
   return subject
+}
+
+function parseHeaderValues(valueString: string): string[] {
+  return valueString.split(',').map((value) => value.trim())
+}
+
+function serializeHeaderValues(...values: string[][]): string {
+  return [...new Set(values.flat())].filter((v) => !!v).join(',')
 }
