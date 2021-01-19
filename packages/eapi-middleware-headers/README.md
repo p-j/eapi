@@ -60,9 +60,9 @@ Another way of implementing the [Proxy example](https://github.com/p-j/eapi/tree
 import { withHeaders } from '@p-j/eapi-middleware-headers'
 
 const callUpstream: RequestHandler = ({ request }) => {
-  const url = new URL('https://some.api.com/endpoint')
-  url.searchParams = { x: request.query.param1, y: request.query.param2 }
-  const upstreamRequest = new Request(url, request) // combine the url with the request details provided, including the Authorization Header added by the middleware
+  // combine the url with the request details provided, including the Authorization Header added by the middleware
+  const searchParams = new URLSearchParams({ x: request.query.param1, y: request.query.param2 })
+  const upstreamRequest = new Request(`https://some.api.com/endpoint?${searchParams.toString()}`, request)
   return fetch(upstreamRequest)
 }
 
@@ -81,9 +81,9 @@ As a follow up to the example above, we may want to remove sensitive information
 import { withHeaders } from '@p-j/eapi-middleware-headers'
 
 const callUpstream: RequestHandler = ({ request }) => {
-  const url = new URL('https://some.api.com/endpoint')
-  url.searchParams = { x: request.query.param1, y: request.query.param2 }
-  const upstreamRequest = new Request(url, request) // combine the url with the request details provided, including the Authorization Header added by the middleware
+  // combine the url with the request details provided, including the Authorization Header added by the middleware
+  const searchParams = new URLSearchParams({ x: request.query.param1, y: request.query.param2 })
+  const upstreamRequest = new Request(`https://some.api.com/endpoint?${searchParams.toString()}`, request)
   return fetch(upstreamRequest)
 }
 
@@ -111,9 +111,9 @@ Overriding CORS headers from an upstream API (you should likely use [`eapi-middl
 import { withHeaders } from '@p-j/eapi-middleware-headers'
 
 const callUpstream: RequestHandler = ({ request }) => {
-  const url = new URL('https://some.api.com/endpoint')
-  url.searchParams = { x: request.query.param1, y: request.query.param2 }
-  const upstreamRequest = new Request(url, request) // combine the url with the request details provided, including the Authorization Header added by the middleware
+  // combine the url with the request details provided, including the Authorization Header added by the middleware
+  const searchParams = new URLSearchParams({ x: request.query.param1, y: request.query.param2 })
+  const upstreamRequest = new Request(`https://some.api.com/endpoint?${searchParams.toString()}`, request)
   return fetch(upstreamRequest)
 }
 
