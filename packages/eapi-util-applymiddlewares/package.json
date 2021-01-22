@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "EAPI utility function that make the whole middleware stack work.",
   "license": "MIT",
-  "author": "Jérémie Parker <github@jeremie-parker.com>",
+  "author": "Jérémie Parker <hi@pkr.sh>",
   "homepage": "https://github.com/p-j/eapi/tree/main/packages/eapi-util-applymiddlewares",
   "keywords": [
     "eapi",

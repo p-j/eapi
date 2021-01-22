@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A cache middleware to work within an EAPI app. Check worker-eapi-template for context.",
   "license": "MIT",
-  "author": "Jérémie Parker <github@jeremie-parker.com>",
+  "author": "Jérémie Parker <hi@pkr.sh>",
   "homepage": "https://github.com/p-j/eapi/tree/main/packages/eapi-middleware-cache",
   "keywords": [
     "eapi",

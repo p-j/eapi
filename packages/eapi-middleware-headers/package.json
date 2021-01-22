@@ -3,7 +3,7 @@
   "version": "1.1.1",
   "description": "A middleware to manage headers or requests within an EAPI app. Check worker-eapi-template for context.",
   "license": "MIT",
-  "author": "Jérémie Parker <github@jeremie-parker.com>",
+  "author": "Jérémie Parker <hi@pkr.sh>",
   "homepage": "https://github.com/p-j/eapi/tree/main/packages/eapi-middleware-headers",
   "keywords": [
     "eapi",
