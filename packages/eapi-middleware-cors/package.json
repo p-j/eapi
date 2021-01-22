@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "Alban Vitale <me@alban.io>",
   "contributors": [
-    "Jérémie Parker <github@jeremie-parker.com"
+    "Jérémie Parker <hi@pkr.sh>"
   ],
   "homepage": "https://github.com/p-j/eapi/tree/main/packages/eapi-middleware-cors",
   "keywords": [
