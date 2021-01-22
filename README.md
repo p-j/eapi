@@ -7,6 +7,7 @@
 [![codecov](https://img.shields.io/codecov/c/github/p-j/eapi?style=flat-square)](https://codecov.io/gh/p-j/eapi)
 [![Build Status](https://img.shields.io/github/workflow/status/p-j/eapi/Build?style=flat-square)](https://github.com/p-j/eapi/actions?query=workflow%3ABuild)
 [![License](https://img.shields.io/github/license/p-j/eapi?style=flat-square)](./LICENSE)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fp-j%2Feapi.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fp-j%2Feapi?ref=badge_shield)
 
 ## What are EAPI packages?
 
@@ -163,3 +164,7 @@ Feel free to use the eapi-\* naming if your middleware is compatible, and the ea
 ### Contributing to this repository
 
 Pull Request are welcome to add more middlewares, utility or request handler to this collection.
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fp-j%2Feapi.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fp-j%2Feapi?ref=badge_large)
