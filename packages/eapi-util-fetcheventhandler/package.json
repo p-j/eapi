@@ -1,6 +1,6 @@
 {
   "name": "@p-j/eapi-util-fetcheventhandler",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "EAPI utility function that make the whole middleware stack work.",
   "license": "MIT",
   "author": "Jérémie Parker <hi@pkr.sh>",
