@@ -20,7 +20,7 @@
   "main": "dist/fetchEventHandler.js",
   "types": "dist/fetchEventHandler.d.ts",
   "devDependencies": {
-    "@cloudflare/workers-types": "^2.0.0",
+    "@cloudflare/workers-types": "2.1.0",
     "@p-j/eapi-types": "^1.0.0"
   },
   "dependencies": {
