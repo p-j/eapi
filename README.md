@@ -165,6 +165,6 @@ Feel free to use the eapi-\* naming if your middleware is compatible, and the ea
 
 Pull Request are welcome to add more middlewares, utility or request handler to this collection.
 
-
 ## License
+
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fp-j%2Feapi.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fp-j%2Feapi?ref=badge_large)
