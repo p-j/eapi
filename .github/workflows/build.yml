@@ -9,15 +9,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+      
       - uses: actions/setup-node@v2
         with:
           node-version: 15
+
+      - uses: creyD/prettier_action@v3.1
+        with:  
+          prettier_options: --write **/*.{ts,js,css,json,md}
+          commit_message: 'style: prettified it for you :zap:'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - run: yarn --pure-lockfile
       - run: yarn lint
       - run: yarn build
       - run: yarn test
         env:
           CI: true
+
       - uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
