@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 15
 
-      - uses: creyD/prettier_action@v3.1
+      - uses: creyD/prettier_action@v3.3
         with:  
           prettier_options: --write **/*.{ts,js,css,json,md}
           commit_message: 'style: prettified it for you :zap:'
