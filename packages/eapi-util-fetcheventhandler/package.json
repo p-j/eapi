@@ -21,7 +21,7 @@
   "types": "dist/fetchEventHandler.d.ts",
   "devDependencies": {
     "@cloudflare/workers-types": "2.1.0",
-    "@p-j/eapi-types": "^1.0.0"
+    "@p-j/eapi-types": "1.0.0"
   },
   "dependencies": {
     "@p-j/eapi-util-applymiddlewares": "^1.0.0"

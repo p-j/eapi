@@ -24,7 +24,7 @@
   "types": "dist/withCors.d.ts",
   "devDependencies": {
     "@cloudflare/workers-types": "2.1.0",
-    "@p-j/eapi-types": "^1.0.0"
+    "@p-j/eapi-types": "1.0.0"
   },
   "jest": {
     "preset": "ts-jest",
