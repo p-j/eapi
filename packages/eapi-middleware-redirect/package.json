@@ -25,7 +25,7 @@
   "main": "dist/withRedirect.js",
   "types": "dist/withRedirect.d.ts",
   "devDependencies": {
-    "@cloudflare/workers-types": "2.1.0",
+    "@cloudflare/workers-types": "2.2.1",
     "@p-j/eapi-types": "1.0.0"
   },
   "jest": {
