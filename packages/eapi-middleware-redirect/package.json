@@ -1,6 +1,6 @@
 {
   "name": "@p-j/eapi-middleware-redirect",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A redirect middleware to work within an EAPI app. Check worker-eapi-template for context.",
   "license": "MIT",
   "author": "Jérémie Parker <hi@pkr.sh>",

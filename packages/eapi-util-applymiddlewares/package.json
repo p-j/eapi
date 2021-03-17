@@ -1,6 +1,6 @@
 {
   "name": "@p-j/eapi-util-applymiddlewares",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "EAPI utility function that make the whole middleware stack work.",
   "license": "MIT",
   "author": "Jérémie Parker <hi@pkr.sh>",

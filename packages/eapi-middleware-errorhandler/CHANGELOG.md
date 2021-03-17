@@ -1,5 +1,11 @@
 # @p-j/eapi-middleware-errorhandler
 
+## 1.1.0
+
+### Minor Changes
+
+- [#43](https://github.com/p-j/eapi/pull/43) [`db71477`](https://github.com/p-j/eapi/commit/db714778f0fff11313fd648b40f990557aedd0e9) Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): update dependency @cloudflare/workers-types to v2.2.1
+
 ## 1.0.0
 
 ### Major Changes
