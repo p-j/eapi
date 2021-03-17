@@ -1,6 +1,6 @@
 {
   "name": "@p-j/eapi-util-fetcheventhandler",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "EAPI utility function that make the whole middleware stack work.",
   "license": "MIT",
   "author": "Jérémie Parker <hi@pkr.sh>",
@@ -24,7 +24,7 @@
     "@p-j/eapi-types": "1.0.0"
   },
   "dependencies": {
-    "@p-j/eapi-util-applymiddlewares": "^1.0.0"
+    "@p-j/eapi-util-applymiddlewares": "^1.1.0"
   },
   "jest": {
     "preset": "ts-jest",
