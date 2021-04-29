@@ -21,7 +21,7 @@
   "main": "dist/withErrorHandler.js",
   "types": "dist/withErrorHandler.d.ts",
   "devDependencies": {
-    "@cloudflare/workers-types": "2.2.1",
+    "@cloudflare/workers-types": "2.2.2",
     "@p-j/eapi-types": "1.0.0"
   },
   "jest": {
