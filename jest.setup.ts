@@ -54,11 +54,7 @@ export class KV_MOCK {
   }
 
   // TODO: implement list function
-  async list(_options?: {
-    prefix?: string
-    limit?: number
-    cursor?: string
-  }): Promise<{
+  async list(_options?: { prefix?: string; limit?: number; cursor?: string }): Promise<{
     keys: { name: string; expiration?: number; metadata?: unknown }[]
     list_complete: boolean
     cursor: string
