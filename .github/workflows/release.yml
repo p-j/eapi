@@ -17,12 +17,12 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v2
         with:
-          node-version: 15
+          node-version: lts/*
       - run: yarn --pure-lockfile
       - uses: changesets/action@master
         with:
           publish: yarn release
-          commit: 'chore(release): publish'
+          commit: "chore(release): publish"
           title: Publish next versions
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

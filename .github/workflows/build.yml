@@ -14,12 +14,12 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: 15
+          node-version: lts/*
 
       - uses: creyD/prettier_action@v3.3
         with:
           prettier_options: --write **/*.{ts,js,css,json,md}
-          commit_message: 'style: prettified it for you :zap:'
+          commit_message: "style: prettified it for you :zap:"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

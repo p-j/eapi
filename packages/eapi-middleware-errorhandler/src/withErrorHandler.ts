@@ -30,14 +30,14 @@ export function withErrorHandler({ enableDebug = false, forwardError }: WithErro
       try {
         // await is not superfluous here as otherwise the catch is bypassed
         return await requestHandler({ event, request, params })
-      } catch (error) {
+      } catch (error: unknown) {
         // While developing adding a debug param will allow you to see the stack trace directly
         const debug = new URL(request.url).searchParams.get('debug') === 'true' && enableDebug
         // if a forward function has been defined, we pass the error to it alongside the original event
         // in case you need to use event.waitUntil while posting the error to a remote monitoring service for instance
-        if (forwardError) forwardError({ error, event, request, params })
+        if (forwardError && error instanceof Error) forwardError({ error, event, request, params })
         // TODO: handle Accept header (eg: respond with JSON vs Text)
-        return new Response(debug ? error.stack || error : null, {
+        return new Response(debug && error instanceof Error ? error.stack || error.toString() : null, {
           status: 500,
         })
       }
