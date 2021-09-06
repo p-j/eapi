@@ -1,5 +1,15 @@
 # @p-j/eapi-middleware-errorhandler
 
+## 1.1.1
+
+### Patch Changes
+
+- [#65](https://github.com/p-j/eapi/pull/65) [`4ddf8fe`](https://github.com/p-j/eapi/commit/4ddf8fecda02a989539841baf84cb309edfddcd4) Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): update all dependencies
+  build(workflow): use node-version: lts/\*
+  fix(errorHandler): type check the error object
+  chore(deps): pin node-fetch to v2
+  style: prettified it for you ⚡
+
 ## 1.1.0
 
 ### Minor Changes
