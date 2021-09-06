@@ -37,7 +37,7 @@ export function withErrorHandler({ enableDebug = false, forwardError }: WithErro
         // in case you need to use event.waitUntil while posting the error to a remote monitoring service for instance
         if (forwardError && error instanceof Error) forwardError({ error, event, request, params })
         // TODO: handle Accept header (eg: respond with JSON vs Text)
-        return new Response((debug && error instanceof Error) ? error.stack || error.toString() : null, {
+        return new Response(debug && error instanceof Error ? error.stack || error.toString() : null, {
           status: 500,
         })
       }
