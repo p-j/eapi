@@ -8,15 +8,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v4
         with:
           node-version: lts/*
 
-      - uses: creyD/prettier_action@v3.3
+      - uses: creyD/prettier_action@v4.3
         with:
           prettier_options: --write **/*.{ts,js,css,json,md}
           commit_message: "style: prettified it for you :zap:"
@@ -30,6 +30,6 @@ jobs:
         env:
           CI: true
 
-      - uses: codecov/codecov-action@v2
+      - uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}

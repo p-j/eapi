@@ -21,7 +21,7 @@
   "types": "dist/applyMiddlewares.d.ts",
   "dependencies": {},
   "devDependencies": {
-    "@cloudflare/workers-types": "2.2.2",
+    "@cloudflare/workers-types": "4.20231025.0",
     "@p-j/eapi-types": "1.0.0"
   },
   "jest": {

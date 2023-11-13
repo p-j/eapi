@@ -21,6 +21,6 @@
   "main": "index.js",
   "types": "./index.d.ts",
   "dependencies": {
-    "@cloudflare/workers-types": "^2.2.2"
+    "@cloudflare/workers-types": "^4.0.0"
   }
 }
