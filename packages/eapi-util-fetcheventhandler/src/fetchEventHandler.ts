@@ -40,7 +40,7 @@ export function fetchEventHandler({
     return match // apply all middlwares to build the final request handler and pass it the request context
       ? applyMiddlewares(match.handler, ...middlewares)(requestContext)
       : originless // if no match, respond with a 404 in case of an oringless worker, call the origin otherwise
-      ? new Response('Not Found', { status: 404 })
-      : fetch(event.request)
+        ? new Response('Not Found', { status: 404 })
+        : fetch(event.request)
   }
 }
